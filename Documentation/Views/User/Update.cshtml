@@ -1,0 +1,63 @@
+﻿@model Documentation.Service.Models.User
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Güncelleştir</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="UpdateAction">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="UserID" class="form-control d-none"/>
+            <div class="form-group">
+                <label asp-for="Username" class="control-label">Kullanıcı Adı</label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+                <br />
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">Adı</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+                <br />
+            </div>
+            <div class="form-group">
+                <label asp-for="Surname" class="control-label">Soyadı</label>
+                <input asp-for="Surname" class="form-control" />
+                <span asp-validation-for="Surname" class="text-danger"></span>
+                <br />
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label">Email</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+                <br />
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label">Şifre</label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+                <br />
+            </div>
+            <div class="form-group">
+                <label asp-for="UserRoles" class="control-label">Rolleri</label>
+                <select class="form-control" asp-for="UserRoles" asp-items="@(new SelectList(ViewBag.RoleList,"RoleID","RoleName"))">
+              <option>Seçiniz</option>
+              </select>
+                <span asp-validation-for="UserRoles" class="text-danger"></span>
+                <br />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Listeye Geri Dön</a>
+</div>

@@ -1,0 +1,14 @@
+D:\Mburak\projeler\web\proje\Proje\Proje\Documentation.Service\bin\Debug\net7.0\Documentation.Service.deps.json
+D:\Mburak\projeler\web\proje\Proje\Proje\Documentation.Service\bin\Debug\net7.0\Documentation.Service.runtimeconfig.json
+D:\Mburak\projeler\web\proje\Proje\Proje\Documentation.Service\bin\Debug\net7.0\Documentation.Service.dll
+D:\Mburak\projeler\web\proje\Proje\Proje\Documentation.Service\bin\Debug\net7.0\Documentation.Service.pdb
+D:\Mburak\projeler\web\proje\Proje\Proje\Documentation.Service\obj\Debug\net7.0\Documentation.Service.csproj.AssemblyReference.cache
+D:\Mburak\projeler\web\proje\Proje\Proje\Documentation.Service\obj\Debug\net7.0\Documentation.Service.GeneratedMSBuildEditorConfig.editorconfig
+D:\Mburak\projeler\web\proje\Proje\Proje\Documentation.Service\obj\Debug\net7.0\Documentation.Service.AssemblyInfoInputs.cache
+D:\Mburak\projeler\web\proje\Proje\Proje\Documentation.Service\obj\Debug\net7.0\Documentation.Service.AssemblyInfo.cs
+D:\Mburak\projeler\web\proje\Proje\Proje\Documentation.Service\obj\Debug\net7.0\Documentation.Service.csproj.CoreCompileInputs.cache
+D:\Mburak\projeler\web\proje\Proje\Proje\Documentation.Service\obj\Debug\net7.0\Documentation.Service.dll
+D:\Mburak\projeler\web\proje\Proje\Proje\Documentation.Service\obj\Debug\net7.0\refint\Documentation.Service.dll
+D:\Mburak\projeler\web\proje\Proje\Proje\Documentation.Service\obj\Debug\net7.0\Documentation.Service.pdb
+D:\Mburak\projeler\web\proje\Proje\Proje\Documentation.Service\obj\Debug\net7.0\Documentation.Service.genruntimeconfig.cache
+D:\Mburak\projeler\web\proje\Proje\Proje\Documentation.Service\obj\Debug\net7.0\ref\Documentation.Service.dll

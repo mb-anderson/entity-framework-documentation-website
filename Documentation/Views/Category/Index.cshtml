@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Documentation.Service.Models.Category>
+
+<h2>
+    Kategoriler
+</h2>
+
+<p>
+
+    <a asp-action="Create" class="btn btn-primary">Yeni Kategori Ekle </a>
+</p>
+@if (TempData["success"] != null)
+{
+    @section Scripts{
+    <script>
+        toastr.success('@TempData["success"]');
+    </script>
+    }
+}
+<table class="table table-bordered">
+    <tr>
+        <th>ID &nbsp;&nbsp;</th>
+        <th>Adı</th>
+        <th>Aksiyon</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>Kategori: @item.CategoryID</td>
+            <td>@item.Name</td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.CategoryID" class="btn btn-danger">Sil</a>
+                <a asp-action="Update" asp-route-id="@item.CategoryID" class="btn btn-warning">Güncelle</a>
+            </td>
+
+        </tr>
+    }
+</table>
+
+
+

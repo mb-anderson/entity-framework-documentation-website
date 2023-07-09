@@ -1,0 +1,85 @@
+﻿@model Documentation.Service.Models.Dokuman
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Güncelleştir</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="UpdateAction">
+            <input asp-for="DokumanID" class="form-control d-none" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label">Doküman Başlığı</label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+                <br />
+            </div>
+            <div class="form-group">
+                <label asp-for="Subtitle" class="control-label">Doküman Altbaşlığı</label>
+                <input asp-for="Subtitle" class="form-control" />
+                <span asp-validation-for="Subtitle" class="text-danger"></span>
+                <br />
+            </div>
+            <div class="form-group d-none">
+                <label asp-for="Content" class="control-label">Doküman İçeriği</label>
+                <input asp-for="Content" class="summernote" />
+                <span asp-validation-for="Content" id="Content" class="text-danger"></span>
+                <br />
+            </div>
+            <div class="form-group">
+                <label asp-for="Content" class="control-label">Doküman İçeriği</label>
+                <input asp-for="Content" class="form-control" id="summernote" />
+                <span class="text-danger"></span>
+                <br />
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryID" class="control-label">Doküman Kategorisi</label>
+                <select class="form-control" asp-for="CategoryID" asp-items="@(new SelectList(ViewBag.CategoryList,"CategoryID","Name"))">
+                    <option>Seçiniz</option>
+                </select>
+                <span asp-validation-for="CategoryID" class="text-danger"></span>
+                <br />
+            </div>
+            <div class="form-group">
+                <label for="image">Doküman Resmi</label>
+                <input type="file" class="form-control-file" id="image">
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Listeye Geri Dön</a>
+</div>
+
+@section Scripts{
+    <link href="~/summernote/summernote.css" rel="stylesheet" />
+    <script src="~/summernote/summernote.js"></script>
+    <script>
+        function Save() {
+            let content = $('#summernote').summernote('code');
+            $('#Content').val(content);
+        }
+        $(document).ready(function () {
+            $('#summernote').summernote({
+                height: 300
+
+            });
+            $('#summernote').on('summernote.change', function () {
+                Save();
+            });
+            $('#summernote').summernote("code", "@Model.Content");
+           
+        });
+       
+    </script>
+}

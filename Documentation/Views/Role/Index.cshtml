@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Documentation.Service.Models.Role>
+
+<h2>
+    Roller
+</h2>
+
+<p>
+
+    <a asp-action="Create" class="btn btn-primary">Yeni Rol Ekle </a>
+</p>
+@if (TempData["success"] != null)
+{
+    @section Scripts{
+    <script>
+        toastr.success('@TempData["success"]');
+    </script>
+    }
+}
+<table class="table table-bordered">
+    <tr>
+        <th>ID &nbsp;&nbsp;    </th>
+        <th>Rol Adı</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <a asp-action="DeleteAction" asp-route-id="@item.RoleID" class="btn btn-danger">Sil</a>
+                <a asp-action="Update" asp-route-id="@item.RoleID" class="btn btn-warning">Güncelle</a>
+                Rol: @item.RoleID
+            </td>
+            <td>@item.RoleName</td>
+        </tr>
+    }
+</table>
+
+
+

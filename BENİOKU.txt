@@ -1,0 +1,35 @@
+Model Sınıfları:
+
+Dokuman: Dokümanların temsil edildiği sınıftır. Her bir dokümanın başlık, alt başlık, içerik, kategori ve oluşturma tarihi gibi özellikleri bulunur.
+dokumanid, title, subtitle, content, created_at, categoryid
+Category: Dokümanların kategorize edildiği sınıftır. Her bir kategori adını içerir ve birçok dokümana ait olabilir.
+categoryid, name
+Role: Role bilgilerinin temsil edildiği sınıftır.
+roleid, rolename, userroles
+User: Kullanıcı bilgilerinin temsil edildiği sınıftır.
+userid, username, password, name, surname, email
+UserRoles: Kullanıcı rollerinin temsil edildiği sınıftır. Many to Many bağlantı vardır(USER manytomany ROLE). Gerekli yapılandırmalar yapılmıştır.
+
+Service Sınıfları:
+
+DokumanService: Dokümanların veritabanı işlemlerini gerçekleştiren sınıftır. Dokümanların oluşturulması, güncellenmesi, silinmesi ve listelenmesi gibi işlemleri sağlar.
+CategoryService: Kategorilerin veritabanı işlemlerini gerçekleştiren sınıftır. Kategori oluşturma, güncelleme, silme ve listeleme gibi işlemleri sağlar.
+RoleService: Rollerin veritabanı işlemlerini gerçekleştiren sınıftır. Rollerin oluşturulması, güncellenmesi, silinmesi ve listelenmesi gibi işlemleri sağlar.
+UserService: Kullanıcıların veritabanı işlemlerini gerçekleştiren sınıftır. Dokümanların oluşturulması, güncellenmesi, silinmesi ve listelenmesi gibi işlemleri sağlar.
+ayrıca şifrelerin hashlenmesi, girilen şifrenin doğruluğu gibi kontroller de yapılır. 
+
+Veritabanı İşlemleri:
+
+ApplicationDbContext: Entity Framework kullanılarak oluşturulan veritabanı bağlantısını temsil eder. Dokümanlar ve kategoriler gibi varlık sınıflarının DbSet'lerini içerir.
+İş Mantığı:
+
+Proje, kullanıcılara dokümanlar oluşturma, kategori oluşturma, dokümanları kategorilere atama, dokümanları güncelleme ve silme gibi işlemleri yapma imkanı sunar.
+Dokümanlar ve kategoriler arasındaki ilişki, bir dokümanın bir kategoriye ait olabilmesi ve bir kategorinin birden çok dokümana ait olabilmesi şeklinde yapılandırılmıştır.
+
+Kullanıcılar, projeyi kullanarak dokümanları kolayca yönetebilir ve istedikleri kategorilere dokümanları atayabilir.
+Kullanıcılar birden fazla role sahip olabilir ve bir rol birden fazla kullanıcıda bulunabilir.
+
+Bu proje, doküman yönetimi için basit ve kullanıcı dostu bir arayüz sunan bir uygulamadır. Dokümanların etkin yönetimi için gerekli işlemleri gerçekleştirir ve verileri MYSQL veritabanında saklar. .net 7, Entity framework 7, Mysql 8 jquery, bootstrap kullanılmıştır.
+
+Login ekranında LoginController çalışmaktadır ve Session a kullanıcı adı username kaydedilmektedir. 
+uygulama önyüz frontend ve backend database service katmanı olmak üzere 2 katmandan oluşmaktadır

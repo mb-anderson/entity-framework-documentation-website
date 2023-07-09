@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Documentation.Service.Models.Dokuman>
+
+<h2>
+    Dokümanlar
+</h2>
+
+<p>
+
+    <a asp-action="Create" class="btn btn-primary">Yeni Doküman Ekle </a>
+</p>
+@if (TempData["success"] != null)
+{
+    @section Scripts{
+    <script>
+        toastr.success('@TempData["success"]');
+    </script>
+    }
+}
+<table class="table table-bordered">
+    <tr>
+        <th>ID &nbsp;&nbsp;    </th>
+        <th>Başlık</th>
+        <th>Altbaşlık</th>
+        <th>Kategori</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <a asp-action="DeleteAction" asp-route-id="@item.DokumanID" class="btn btn-danger">Sil</a>
+                <a asp-action="Update" asp-route-id="@item.DokumanID" class="btn btn-warning">Güncelle</a>
+                Doküman: @item.DokumanID
+            </td>
+            <td>@item.Title</td>
+            <td>@item.Subtitle</td>
+            <td>@item.Category.Name</td>
+
+        </tr>
+    }
+</table>
+
+
+

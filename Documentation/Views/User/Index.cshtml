@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Documentation.Service.Models.User>
+
+<h2>
+    Kullanıcılar
+</h2>
+
+<p>
+
+    <a asp-action="Create" class="btn btn-primary">Yeni Kullanıcı Ekle </a>
+</p>
+@if (TempData["success"] != null)
+{
+    @section Scripts{
+    <script>
+        toastr.success('@TempData["success"]');
+    </script>
+    }
+}
+<table class="table table-bordered">
+    <tr>
+        <th>ID &nbsp;&nbsp;    </th>
+        <th>Kullanıcı Adı</th>
+        <th>Adı</th>
+        <th>Soyadı</th>
+        <th>Email</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <a asp-action="DeleteAction" asp-route-id="@item.UserID" class="btn btn-danger">Sil</a>
+                <a asp-action="Update" asp-route-id="@item.UserID" class="btn btn-warning">Güncelle</a>
+                Kullanıcı: @item.UserID
+            </td>
+            <td>@item.Username</td>
+            <td>@item.Name</td>
+            <td>@item.Surname</td>
+            <td>@item.Email</td>
+
+        </tr>
+    }
+</table>
+
+
+
